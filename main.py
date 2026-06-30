@@ -5,7 +5,7 @@ from typing import List
 
 app = FastAPI()
 
-# Representação em Orientação a Objetos do Filme
+# Representação em Orientação a Objetos do Fil
 class Filme(BaseModel):
     id: int
     titulo: str
@@ -13,7 +13,7 @@ class Filme(BaseModel):
     ano: int
     nota: int
 
-# Banco de dados simulado na memória para evitar dores de cabeça com instalação
+# Banco de dados simulado na memória
 banco_de_filmes: List[Filme] = [
     Filme(id=1, titulo="Inception", genero="Ficção Científica", ano=2010, nota=5),
     Filme(id=2, titulo="O Rei Leão", genero="Animação", ano=1994, nota=5)
@@ -21,7 +21,7 @@ banco_de_filmes: List[Filme] = [
 
 @app.get("/", response_class=HTMLResponse)
 def listar_filmes():
-    # Gerando a tabela de filmes dinamicamente
+    #  tabela de filmes dinamicamente
     linhas_tabela = ""
     for filme in banco_de_filmes:
         linhas_tabela += f"""
@@ -33,7 +33,7 @@ def listar_filmes():
         </tr>
         """
 
-    # HTML Puro e limpo, fácil de entender e apresentar
+    # HTML 
     html_content = f"""
     <!DOCTYPE html>
     <html lang="pt-br">
